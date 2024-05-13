@@ -1,0 +1,29 @@
+SqlConnection con = new SqlConnection(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+private void button1_Click(object sender, EventArgs e)
+       {
+            
+            if (IsValid())
+               {
+                SqlCommand cmd = new SqlCommand("INSERT INTO dbo.[Clients] (Phone, Name, Email) VALUES(@Phone, @Name, @Email)", con);
+                cmd.CommandType = CommandType.Text;
+                   cmd.Parameters.AddWithValue("@Phone", textBox1.Text);
+                   cmd.Parameters.AddWithValue("@Name", textBox2.Text);
+                   cmd.Parameters.AddWithValue("@Email", textBox3.Text);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                   con.Close();
+
+                   MessageBox.Show("New client is succsessfully saved in the database!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 //GetClientsRecord();
+
+               }
+           }
+        private bool IsValid()
+        {
+            if (textBox1.Text == string.Empty)
+            {
+                MessageBox.Show("Client name is required", "Failled", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
