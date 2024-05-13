@@ -1,0 +1,154 @@
+        public double total = 0;
+        double _5kv = 10.80;
+        double _9kv = 12.80;
+        double _12kv = 15.80;
+        double _15kv = 17.80;
+        double _PrazenOffice = 2.20;
+        double _PulnoOborudvane = 7.20;
+        double _BuroIOfficeStol = 4.20;
+        double _BuroIOfficeStolIPeriferia = 5.20;
+
+
+
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox5.Checked)
+            {
+                total += _5kv;
+
+            }
+            if(checkBox5.Checked) 
+            checkBox6.Checked = false;
+            checkBox7.Checked = false;
+            checkBox8.Checked = false;
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox6.Checked)
+            {
+                total += _9kv;
+
+            }
+            if (checkBox6.Checked)checkBox5.Checked = false;
+            checkBox7.Checked = false;
+            checkBox8.Checked = false;
+        }
+
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox7.Checked)
+            {
+                total += _12kv;
+
+            }
+            if (checkBox7.Checked)checkBox6.Checked = false;
+            checkBox5.Checked = false;
+            checkBox8.Checked = false;
+        }
+
+        private void checkBox8_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox8.Checked)
+            {
+                total += _15kv;
+
+            }
+            if (checkBox8.Checked)checkBox6.Checked = false;
+            checkBox7.Checked = false;
+            checkBox5.Checked = false;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked) checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked) checkBox1.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked) checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox4.Checked = false;
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked) checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox1.Checked = false;
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox9_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox9.Checked)
+            {
+                total += _PrazenOffice;
+
+            }
+            if (checkBox9.Checked )checkBox10.Checked = false;
+            checkBox11.Checked = false;
+            checkBox12.Checked = false;
+        }
+
+        private void checkBox10_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox10.Checked)
+            {
+                total += _PulnoOborudvane;
+
+            }
+            if (checkBox10.Checked)checkBox9.Checked = false;
+            checkBox11.Checked = false;
+            checkBox12.Checked = false;
+        }
+
+        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox11.Checked)
+            {
+                total += _BuroIOfficeStol;
+
+            }
+            if (checkBox11.Checked) checkBox9.Checked = false;
+            checkBox10.Checked = false;
+            checkBox12.Checked = false;
+        }
+
+        private void checkBox12_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox12.Checked)
+            {
+                total += _BuroIOfficeStolIPeriferia;
+            }
+            if (checkBox12.Checked) checkBox9.Checked = false;
+            checkBox11.Checked = false;
+            checkBox10.Checked = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+            label7.Text = sumNaemChas.ToString();
+            //label8.Text = textBox1.Text * label7.Text;
+        }
